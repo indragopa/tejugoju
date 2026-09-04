@@ -1,0 +1,1974 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ತೇಜಸ್ ಎಚ್ ಬಾಡಾಲ | Tejas H. Badala</title>
+  
+  <!-- Typography Hierarchy:
+       - Benne: Titles & Author Identity
+       - Padyakke Expanded One: Section Headings, Folder Tabs & Prominent Callouts
+       - Hubballi: Flowing Prose & Block Content
+       - Space Grotesk: Metric Chips, Untitled-UI Labels & Micro-interactions
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Benne&family=Hubballi&family=Padyakke+Expanded+One&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM TOKENS: Material 3 Tonal Palette + Terracotta & Desert Sand
+       ========================================================================== */
+    :root {
+      /* M3 Tonal Surface Roles with Terracotta / Clay Infusion */
+      --md-sys-color-primary: #a3381e;
+      --md-sys-color-on-primary: #ffffff;
+      --md-sys-color-primary-container: #fedcd2;
+      --md-sys-color-on-primary-container: #3d0c04;
+
+      --md-sys-color-secondary: #8c4c34;
+      --md-sys-color-secondary-container: #f7ded3;
+      --md-sys-color-on-secondary-container: #38150a;
+
+      --md-sys-color-tertiary: #a8621e;
+      --md-sys-color-tertiary-container: #fee7cf;
+      --md-sys-color-on-tertiary-container: #391c00;
+
+      --md-sys-color-surface: #faf3e8;
+      --md-sys-color-surface-dim: #ebdcc9;
+      --md-sys-color-surface-container: #f4e9da;
+      --md-sys-color-surface-container-high: #ebdcc8;
+      --md-sys-color-surface-container-highest: #e0ceb7;
+      --md-sys-color-surface-card: #fdfaf3;
+
+      --md-sys-color-on-surface: #2b1c15;
+      --md-sys-color-on-surface-variant: #5f4a40;
+      --md-sys-color-outline: #8c766b;
+      --md-sys-color-outline-variant: #dfcfc2;
+
+      /* Scrapbook Tactile Inks & Accents */
+      --ink-deep: #24140d;
+      --ink-muted: #5e4539;
+      --terracotta-rich: #b33920;
+      --clay-burnt: #742312;
+      --ochre-gold: #cf7c22;
+      --moss-green: #3b5a32;
+      --sand-cloth: #ecdcc3;
+
+      /* ---- FESTIVE SPECTRUM: full-colour accent set (ink + pastel pair) ---- */
+      --hue-terracotta: #b33920;   --hue-terracotta-soft: #ffdfd4;
+      --hue-marigold:   #c07a03;   --hue-marigold-soft:   #ffeec2;
+      --hue-forest:     #2c6b2f;   --hue-forest-soft:     #dcf0d5;
+      --hue-teal:       #0e7d72;   --hue-teal-soft:       #d1f0eb;
+      --hue-indigo:     #2f4bb5;   --hue-indigo-soft:     #dfe4ff;
+      --hue-violet:     #6b3fb5;   --hue-violet-soft:     #ebe0ff;
+      --hue-rose:       #c01f5b;   --hue-rose-soft:       #ffdbe8;
+      --hue-sky:        #0b6fa8;   --hue-sky-soft:        #d7eefc;
+
+      /* Per-page accent: each folio page overrides these two inline */
+      --page-accent: var(--clay-burnt);
+      --page-accent-soft: var(--md-sys-color-primary-container);
+
+      /* Material 3 & Untitled UI Elevation System */
+      --shadow-sm: 0 1px 2px rgba(36, 20, 13, 0.08);
+      --shadow-md: 0 4px 10px rgba(36, 20, 13, 0.1), 0 1px 3px rgba(36, 20, 13, 0.06);
+      --shadow-lg: 0 12px 28px rgba(36, 20, 13, 0.12), 0 4px 10px rgba(36, 20, 13, 0.08);
+      
+      /* Neo-Brutalist / Tactile Scrapbook Hard Offsets */
+      --hard-edge: 3.5px solid var(--ink-deep);
+      --hard-shadow-sm: 3px 3px 0px var(--ink-deep);
+      --hard-shadow-md: 5px 5px 0px var(--ink-deep);
+      --hard-shadow-lg: 8px 8px 0px var(--ink-deep);
+      --hard-shadow-terracotta: 6px 6px 0px var(--clay-burnt);
+
+      /* Jitter Motion Spring Easings */
+      --spring-snap: cubic-bezier(0.34, 1.45, 0.64, 1);
+      --spring-fluid: cubic-bezier(0.16, 1, 0.3, 1);
+      --spring-bouncy: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+      --transition-micro: 0.14s var(--spring-fluid);
+      --transition-page: 0.44s var(--spring-snap);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--md-sys-color-surface);
+      background-image: 
+        radial-gradient(#d3be9f 1.25px, transparent 1.25px),
+        linear-gradient(to right, rgba(54, 25, 14, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(54, 25, 14, 0.03) 1px, transparent 1px);
+      background-size: 26px 26px, 52px 52px, 52px 52px;
+      color: var(--ink-deep);
+      font-family: 'Hubballi', sans-serif;
+      font-size: 21px;
+      line-height: 1.68;
+      min-height: 100vh;
+      padding: 24px 14px 110px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Atmospheric ambient glow — now a multi-hue colour wash top & bottom */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -12% -12% auto -12%;
+      height: 78vh;
+      background:
+        radial-gradient(38% 46% at 16% 6%, rgba(255, 156, 58, 0.30) 0%, rgba(255,255,255,0) 70%),
+        radial-gradient(34% 42% at 84% 2%, rgba(47, 75, 181, 0.17) 0%, rgba(255,255,255,0) 72%),
+        radial-gradient(30% 40% at 52% 0%, rgba(192, 31, 91, 0.13) 0%, rgba(255,255,255,0) 70%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(34px);
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: auto -12% -14% -12%;
+      height: 62vh;
+      background:
+        radial-gradient(34% 44% at 10% 96%, rgba(14, 125, 114, 0.20) 0%, rgba(255,255,255,0) 72%),
+        radial-gradient(36% 44% at 90% 92%, rgba(107, 63, 181, 0.18) 0%, rgba(255,255,255,0) 72%),
+        radial-gradient(30% 36% at 50% 100%, rgba(192, 122, 3, 0.16) 0%, rgba(255,255,255,0) 70%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(38px);
+    }
+
+    .folio-shell {
+      max-width: 1040px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ==========================================================================
+       JITTER-STYLE TACTILE ASSETS: Animated Washi Tapes, Post-its, Stamps
+       ========================================================================== */
+    .washi-tape-strip {
+      position: absolute;
+      width: 140px;
+      height: 32px;
+      background: rgba(226, 185, 134, 0.82);
+      backdrop-filter: blur(2px);
+      clip-path: polygon(
+        0% 0%, 100% 0%, 
+        98% 25%, 100% 50%, 97% 75%, 100% 100%, 
+        0% 100%, 
+        2% 75%, 0% 50%, 3% 25%
+      );
+      box-shadow: 0 3px 6px rgba(43, 28, 21, 0.15);
+      z-index: 30;
+      pointer-events: none;
+      transition: transform 0.3s var(--spring-snap);
+    }
+
+    .washi-tape-strip.tape-top-center {
+      top: -16px;
+      left: 36%;
+      background: rgba(24, 155, 143, 0.62);
+      transform: rotate(-3deg);
+      animation: tape-sway 7s ease-in-out infinite;
+    }
+    .washi-tape-strip.tape-corner-right {
+      top: -15px;
+      right: 32px;
+      width: 110px;
+      background: rgba(232, 160, 19, 0.78);
+      transform: rotate(3.8deg);
+      animation: tape-sway 8.5s ease-in-out infinite reverse;
+    }
+    .washi-tape-strip.tape-bottom-left {
+      bottom: -15px;
+      left: 48px;
+      width: 125px;
+      background: rgba(192, 31, 91, 0.62);
+      transform: rotate(2deg);
+    }
+    .washi-tape-strip.tape-bottom-right {
+      bottom: -14px;
+      right: 90px;
+      width: 118px;
+      background: rgba(63, 90, 200, 0.55);
+      transform: rotate(-2.6deg);
+    }
+    @keyframes tape-sway {
+      0%, 100% { transform: rotate(-3deg) translateY(0); }
+      50%      { transform: rotate(-1.2deg) translateY(2px); }
+    }
+
+    /* Paperclip Visual */
+    .binder-clip {
+      position: absolute;
+      top: -20px;
+      left: 34px;
+      width: 22px;
+      height: 58px;
+      border: 3.8px solid #6b3a24;
+      border-radius: 14px 14px 10px 10px;
+      background: transparent;
+      z-index: 35;
+      pointer-events: none;
+      box-shadow: 2px 3px 0px rgba(43, 28, 21, 0.3);
+      transform: rotate(-6deg);
+      transition: transform 0.2s ease;
+    }
+    .binder-clip::after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 2px;
+      width: 10px;
+      height: 36px;
+      border: 3px solid #6b3a24;
+      border-bottom: none;
+      border-radius: 8px 8px 0 0;
+    }
+
+    /* Jitter Interactive Sticky Note — now pinned to the portrait frame */
+    .post-it-doodle {
+      position: absolute;
+      left: -34px;
+      bottom: 58px;
+      background: #fbf1b8;
+      border: 2px solid var(--ink-deep);
+      box-shadow: 4px 4px 0px var(--ink-deep);
+      padding: 10px 14px;
+      transform: rotate(-6.5deg);
+      z-index: 25;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #573911;
+      max-width: 155px;
+      cursor: pointer;
+      transition: transform 0.25s var(--spring-snap), box-shadow 0.25s ease;
+    }
+    .post-it-doodle:hover {
+      transform: rotate(0deg) scale(1.08) translateY(-4px);
+      box-shadow: 7px 7px 0px var(--ink-deep);
+      background: #fff6c9;
+    }
+    .post-it-doodle::before {
+      content: "📌";
+      font-size: 14px;
+      display: inline-block;
+      margin-right: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .post-it-doodle { display: none; }
+    }
+
+    /* ==========================================================================
+       HERO BAND + PORTRAIT NICHE
+       The cutout is cropped at the chest, so it sits flush inside an arch-topped
+       niche (temple-niche shape) with a caption ribbon covering the cut edge.
+       That way the crop reads as deliberate framing, not a broken image.
+       ========================================================================== */
+    .hero-band {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 292px;
+      gap: 30px;
+      align-items: end;
+      margin-bottom: 4px;
+    }
+    .hero-copy { min-width: 0; }
+
+    .portrait-frame {
+      position: relative;
+      width: 292px;
+      margin: 0 0 6px auto;
+    }
+
+    .portrait-niche {
+      position: relative;
+      width: 292px;
+      height: 376px;
+      border: var(--hard-edge);
+      border-radius: 50% 50% 16px 16px / 40% 40% 16px 16px;
+      overflow: hidden;
+      box-shadow: 8px 8px 0px var(--ink-deep);
+      background:
+        linear-gradient(180deg, #ffd8a2 0%, #ffb877 42%, #ff9d5c 68%, #f2803f 100%);
+      transform: rotate(-1.8deg);
+      transition: transform 0.35s var(--spring-snap), box-shadow 0.35s ease;
+      cursor: pointer;
+    }
+    .portrait-niche:hover {
+      transform: rotate(0.6deg) scale(1.025);
+      box-shadow: 12px 12px 0px var(--ink-deep);
+    }
+
+    /* Sunburst rays behind the head */
+    .niche-rays {
+      position: absolute;
+      inset: -18%;
+      background: repeating-conic-gradient(from 0deg at 50% 44%,
+        rgba(255, 255, 255, 0.50) 0deg 6deg,
+        rgba(255, 255, 255, 0) 6deg 13deg);
+      animation: rays-turn 44s linear infinite;
+      z-index: 1;
+    }
+    @keyframes rays-turn { to { transform: rotate(360deg); } }
+
+    /* Soft halo disc so the head separates from the rays (percentage-sized so it
+       scales with the niche on small screens) */
+    .niche-halo {
+      position: absolute;
+      left: 50%;
+      top: 9%;
+      width: 73%;
+      height: 57%;
+      margin-left: -36.5%;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff6e2 0%, #ffe6b8 62%, rgba(255, 230, 184, 0) 72%);
+      box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.32);
+      z-index: 2;
+    }
+
+    /* The actual photo: bottom-anchored, height-fitted so the arch never clips hair */
+    .portrait-img {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      height: 87%;
+      width: auto;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+      filter: drop-shadow(0 10px 14px rgba(63, 25, 8, 0.32));
+    }
+
+    /* Ribbon across the bottom, hides the chest crop line */
+    .niche-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 4;
+      background: var(--ink-deep);
+      border-top: 3px solid var(--hue-marigold);
+      color: #ffe9c4;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-align: center;
+      padding: 9px 8px 10px;
+      text-transform: uppercase;
+    }
+
+    /* Tape over the top of the arch + round rubber seal, both outside the crop */
+    .niche-tape {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      margin-left: -52px;
+      width: 104px;
+      height: 30px;
+      background: rgba(24, 155, 143, 0.72);
+      backdrop-filter: blur(2px);
+      clip-path: polygon(0% 0%, 100% 0%, 97% 30%, 100% 60%, 96% 100%, 0% 100%, 3% 70%, 0% 40%, 4% 15%);
+      box-shadow: 0 3px 6px rgba(43, 28, 21, 0.3);
+      transform: rotate(-8deg);
+      z-index: 12;
+      pointer-events: none;
+    }
+
+    .niche-seal {
+      position: absolute;
+      right: -20px;
+      bottom: 74px;
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: var(--hue-rose);
+      color: #fff2f6;
+      border: 3px solid var(--ink-deep);
+      box-shadow: 4px 4px 0px var(--ink-deep);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: 1.25;
+      transform: rotate(-11deg);
+      z-index: 14;
+      animation: seal-bob 4.2s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .niche-seal strong { font-size: 0.95rem; letter-spacing: 0.5px; display: block; }
+    @keyframes seal-bob {
+      0%, 100% { transform: rotate(-11deg) translateY(0); }
+      50%      { transform: rotate(-6deg) translateY(-5px); }
+    }
+
+    @media (max-width: 880px) {
+      .hero-band {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 18px;
+      }
+      .hero-copy { order: 2; width: 100%; }
+      .portrait-frame { order: 1; width: 236px; margin: 0 auto 4px; }
+      .portrait-niche { width: 236px; height: 304px; }
+      .niche-seal { width: 68px; height: 68px; right: -12px; bottom: 60px; font-size: 0.54rem; }
+      .niche-seal strong { font-size: 0.82rem; }
+    }
+
+    /* ==========================================================================
+       COLOUR SPINE, GARLAND DIVIDER & FLOATING CONFETTI
+       ========================================================================== */
+    .spectrum-ribbon {
+      height: 11px;
+      border-bottom: 3.5px solid var(--ink-deep);
+      background: linear-gradient(90deg,
+        var(--hue-terracotta) 0%, var(--hue-marigold) 14%, var(--hue-forest) 28%,
+        var(--hue-teal) 42%, var(--hue-sky) 56%, var(--hue-indigo) 70%,
+        var(--hue-violet) 84%, var(--hue-rose) 100%);
+      background-size: 220% 100%;
+      animation: ribbon-drift 16s linear infinite;
+      position: relative;
+      z-index: 6;
+    }
+    @keyframes ribbon-drift {
+      0%   { background-position: 0% 0; }
+      100% { background-position: 220% 0; }
+    }
+
+    .garland-divider {
+      height: 20px;
+      margin: 20px 0 4px;
+      background-image:
+        radial-gradient(circle at 10px 12px, var(--hue-marigold) 5.5px, rgba(255,255,255,0) 6.5px),
+        radial-gradient(circle at 24px 12px, var(--hue-terracotta) 4px, rgba(255,255,255,0) 5px),
+        linear-gradient(to bottom, rgba(36,20,13,0) 5px, rgba(36,20,13,0.4) 5px, rgba(36,20,13,0.4) 6.5px, rgba(36,20,13,0) 6.5px);
+      background-size: 28px 20px, 28px 20px, 100% 20px;
+      background-repeat: repeat-x, repeat-x, no-repeat;
+      opacity: 0.9;
+    }
+
+    /* Untitled UI: Refined Badge Groups */
+    .uui-badge-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--md-sys-color-surface-card);
+      border: 2px solid var(--ink-deep);
+      padding: 4px 12px 4px 6px;
+      border-radius: 9999px;
+      box-shadow: var(--hard-shadow-sm);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--ink-deep);
+      transition: transform 0.15s var(--spring-snap);
+      cursor: default;
+    }
+    .uui-badge-group:hover {
+      transform: translateY(-2px);
+    }
+    .uui-badge-dot {
+      width: 9px;
+      height: 9px;
+      background: var(--terracotta-rich);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2.5px var(--md-sys-color-primary-container);
+      animation: pulse-dot 2s infinite ease-in-out;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.25); opacity: 0.7; }
+    }
+
+    /* Rubber Postage Stamps */
+    .tactile-stamp {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 2.2px dashed var(--ink-deep);
+      padding: 4px 11px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: var(--hard-shadow-sm);
+      transform: rotate(-1.6deg);
+      transition: transform 0.18s var(--spring-snap);
+      background: var(--md-sys-color-surface-container-high);
+    }
+    .tactile-stamp:hover {
+      transform: rotate(0deg) scale(1.05);
+    }
+    .stamp-terracotta {
+      background: #fde4dd;
+      color: #8a2a14;
+      border-color: var(--clay-burnt);
+      box-shadow: 2.5px 2.5px 0px var(--clay-burnt);
+    }
+    .stamp-ochre {
+      background: #fdf1d9;
+      color: #7b4308;
+      border-color: #7b4308;
+      box-shadow: 2.5px 2.5px 0px #7b4308;
+    }
+    .stamp-moss {
+      background: #e3eedc;
+      color: var(--moss-green);
+      border-color: var(--moss-green);
+      box-shadow: 2.5px 2.5px 0px var(--moss-green);
+    }
+
+    /* Material 3 Segmented Folder Tabs (Numbers removed, fluid & tactile) */
+    .m3-tab-deck {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      margin-bottom: -3.5px;
+      position: relative;
+      z-index: 10;
+      scrollbar-width: none;
+    }
+    .m3-tab-deck::-webkit-scrollbar { display: none; }
+
+    .m3-tab {
+      background: var(--sand-cloth);
+      border: var(--hard-edge);
+      border-bottom: none;
+      padding: 10px 18px;
+      font-family: 'Padyakke Expanded One', sans-serif;
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--ink-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      border-radius: 12px 12px 0 0;
+      box-shadow: inset 0 -3px 5px rgba(43, 28, 21, 0.06);
+      transition: all 0.2s var(--spring-fluid);
+      position: relative;
+    }
+    .m3-tab:hover {
+      background: #e4d0b5;
+      color: var(--ink-deep);
+      transform: translateY(-3px);
+    }
+    .m3-tab.active {
+      background: var(--md-sys-color-surface-card);
+      color: var(--page-accent);
+      padding-bottom: 14px;
+      transform: translateY(-4px);
+      box-shadow: 0 -4px 0 var(--terracotta-rich);
+    }
+    .m3-tab.active::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--md-sys-color-surface-card);
+    }
+
+    .folio-stage {
+      background: var(--md-sys-color-surface-card);
+      border: var(--hard-edge);
+      box-shadow: var(--hard-shadow-lg);
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      border-radius: 4px 4px 8px 8px;
+    }
+
+    .folio-track {
+      display: flex;
+      width: 600%;
+      transition: transform var(--transition-page);
+      will-change: transform;
+    }
+
+    .folio-page {
+      width: 16.66666%;
+      flex-shrink: 0;
+      padding: 40px 34px;
+      min-height: 570px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      opacity: 0.25;
+      transform: scale(0.985);
+      transition: opacity 0.35s ease, transform 0.35s var(--spring-snap);
+      overflow-y: auto;
+      max-height: 75vh;
+    }
+
+    .folio-page.is-active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Author Typography */
+    .author-title {
+      font-family: 'Benne', serif;
+      font-size: clamp(2.5rem, 5.8vw, 4.4rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #8f2a14;
+      /* Risograph-style colour misregistration */
+      text-shadow:
+         2.5px 2px 0 rgba(232, 160, 19, 0.42),
+        -2px  -1px 0 rgba(14, 125, 114, 0.20),
+         5px   4px 0 rgba(192, 31, 91, 0.12);
+    }
+
+    .author-sub {
+      font-family: 'Benne', serif;
+      font-size: 1.65rem;
+      letter-spacing: 2px;
+      color: #0d5f77;
+      font-weight: 400;
+      display: inline-block;
+      margin-top: 4px;
+      padding: 0 8px;
+      background: linear-gradient(180deg, rgba(255,255,255,0) 52%, var(--hue-marigold-soft) 52%, var(--hue-marigold-soft) 92%, rgba(255,255,255,0) 92%);
+      box-decoration-break: clone;
+    }
+
+    /* Untitled UI Inspired Metric Stat Cards */
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 14px;
+      margin: 22px 0;
+    }
+
+    .metric-card {
+      background: var(--md-sys-color-surface-container);
+      border: 2px solid var(--ink-deep);
+      box-shadow: var(--hard-shadow-sm);
+      padding: 14px 16px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s var(--spring-snap), box-shadow 0.2s ease;
+    }
+    .metric-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--hard-shadow-md);
+      background: #fdf5e9;
+    }
+    .metric-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--page-accent);
+      line-height: 1.1;
+    }
+    .metric-label {
+      font-family: 'Padyakke Expanded One', sans-serif;
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      margin-top: 4px;
+    }
+
+    /* Material 3 Assist & Filter Pill Chips */
+    .m3-chip-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 16px 0 20px;
+    }
+
+    .m3-chip {
+      background: var(--md-sys-color-surface-container-high);
+      border: 1.8px solid var(--ink-deep);
+      border-radius: 9999px;
+      padding: 4px 14px;
+      font-family: 'Hubballi', sans-serif;
+      font-size: 1.18rem;
+      font-weight: 600;
+      color: var(--ink-deep);
+      box-shadow: 2px 2px 0px var(--ink-deep);
+      transform: rotate(calc(-0.6deg + (var(--i, 0) * 0.4deg)));
+      transition: all 0.16s var(--spring-snap);
+      cursor: default;
+    }
+    .m3-chip:hover {
+      transform: translateY(-2px) scale(1.03);
+      background: var(--md-sys-color-primary-container);
+    }
+
+    /* Editorial Prose Quote */
+    .bio-prose {
+      font-family: 'Hubballi', sans-serif;
+      font-size: 1.35rem;
+      line-height: 1.7;
+      color: var(--ink-deep);
+      margin: 18px 0 24px;
+      border-left: 5px solid var(--terracotta-rich);
+      padding: 14px 20px;
+      background: var(--md-sys-color-surface-container);
+      box-shadow: inset 0 0 12px rgba(179, 57, 32, 0.04);
+      position: relative;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .jitter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--terracotta-rich);
+      color: #ffffff;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 0.98rem;
+      padding: 12px 24px;
+      border: var(--hard-edge);
+      box-shadow: var(--hard-shadow-md);
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 8px;
+      position: relative;
+      transition: all 0.12s ease;
+      user-select: none;
+    }
+    .jitter-btn:hover {
+      background: var(--clay-burnt);
+      transform: translate(-2px, -2px);
+      box-shadow: var(--hard-shadow-lg);
+    }
+    .jitter-btn:active {
+      transform: translate(3px, 3px);
+      box-shadow: 1px 1px 0px var(--ink-deep);
+    }
+
+    .btn-sand {
+      background: var(--ochre-gold);
+      color: #ffffff;
+    }
+    .btn-sand:hover {
+      background: #b26818;
+    }
+
+    .btn-secondary {
+      background: var(--sand-cloth);
+      color: var(--page-accent);
+    }
+    .btn-secondary:hover {
+      background: #dfcbab;
+      color: var(--page-accent);
+    }
+
+    .book-curtain {
+      display: grid;
+      grid-template-columns: 270px 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    @media (max-width: 780px) {
+      .book-curtain {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    .book-cover {
+      background: linear-gradient(145deg, #4f170b 0%, #7e2612 45%, #a63f25 100%);
+      border: 3.5px solid var(--ink-deep);
+      box-shadow: var(--hard-shadow-lg);
+      padding: 26px 22px;
+      color: #ffffff;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      border-radius: 6px;
+      transform: rotate(-2.4deg);
+      transition: transform 0.3s var(--spring-snap), box-shadow 0.3s ease;
+    }
+    .book-cover:hover {
+      transform: rotate(0deg) scale(1.03);
+      box-shadow: 12px 12px 0px var(--ink-deep);
+    }
+    .book-spine-effect {
+      position: absolute;
+      left: 14px;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background: rgba(255, 230, 200, 0.28);
+    }
+    .book-title-kannada {
+      font-family: 'Padyakke Expanded One', cursive, sans-serif;
+      font-size: 2.25rem;
+      font-weight: 400;
+      line-height: 1.25;
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.7);
+      margin-top: 10px;
+      color: #fdf5ea;
+    }
+
+    /* Asymmetric Dog-Eared Scrap Cards (Untitled UI Layout + Clumsy Scrapbook) */
+    .duo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 780px) {
+      .duo-grid { grid-template-columns: 1fr; }
+    }
+
+    .scrap-card {
+      background: var(--md-sys-color-surface-container);
+      border: 2.5px solid var(--ink-deep);
+      box-shadow: var(--hard-shadow-sm);
+      padding: 24px;
+      position: relative;
+      border-radius: 8px;
+      transition: transform 0.2s var(--spring-snap), box-shadow 0.2s ease;
+    }
+    .scrap-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--hard-shadow-md);
+    }
+
+    /* Clumsy Dog-eared fold */
+    .dog-ear {
+      position: relative;
+    }
+    .dog-ear::before {
+      content: "";
+      position: absolute;
+      top: -2.5px;
+      right: -2.5px;
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(135deg, var(--sand-cloth) 50%, var(--ink-deep) 50%, transparent 55%);
+      border-bottom: 2.5px solid var(--ink-deep);
+      border-left: 2.5px solid var(--ink-deep);
+      box-shadow: -2px 2px 4px rgba(43, 28, 21, 0.12);
+      border-radius: 0 0 0 2px;
+    }
+
+    .scrap-card h3 {
+      font-family: 'Padyakke Expanded One', cursive, sans-serif;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      margin-bottom: 14px;
+      border-bottom: 2px dashed var(--ink-deep);
+      padding-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--page-accent);
+    }
+
+    .entry-list {
+      list-style: none;
+    }
+    .entry-item {
+      padding: 12px 0;
+      border-bottom: 1px dotted rgba(54, 25, 14, 0.35);
+      font-size: 1.2rem;
+    }
+    .entry-item:last-child {
+      border-bottom: none;
+    }
+    .entry-tag {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      background: var(--sand-cloth);
+      color: var(--page-accent);
+      padding: 3px 8px;
+      border: 1.5px solid var(--ink-deep);
+      font-weight: 700;
+      margin-right: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .folio-dock {
+      margin-top: 22px;
+      background: var(--sand-cloth);
+      border: var(--hard-edge);
+      box-shadow: var(--hard-shadow-md);
+      padding: 14px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-radius: 8px;
+    }
+
+    .dock-pager {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .dock-btn {
+      background: var(--md-sys-color-surface-card);
+      border: 2.2px solid var(--ink-deep);
+      box-shadow: 0 4px 0 var(--ink-deep);
+      font-family: 'Padyakke Expanded One', sans-serif;
+      padding: 9px 20px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      color: var(--page-accent);
+      transition: all 0.1s ease;
+      border-radius: 6px;
+      user-select: none;
+    }
+    .dock-btn:hover:not(:disabled) {
+      background: #faeedb;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 var(--ink-deep);
+    }
+    .dock-btn:active:not(:disabled) {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 var(--ink-deep);
+    }
+    .dock-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    /* Untitled UI Copy Chips */
+    .copy-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--md-sys-color-surface-card);
+      border: 2px solid var(--ink-deep);
+      padding: 9px 16px;
+      font-size: 0.96rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin: 6px 8px 6px 0;
+      box-shadow: var(--hard-shadow-sm);
+      transition: all 0.14s var(--spring-snap);
+      border-radius: 6px;
+      color: var(--page-accent);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .copy-chip:hover {
+      background: #fcebe4;
+      transform: translate(-2px, -2px);
+      box-shadow: var(--hard-shadow-md);
+    }
+    .copy-chip:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px var(--ink-deep);
+    }
+
+    .excerpt-dialog {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(36, 20, 13, 0.75);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+    .excerpt-dialog.open { display: flex; }
+
+    .excerpt-window {
+      background: var(--md-sys-color-surface-card);
+      border: 4px solid var(--ink-deep);
+      box-shadow: 12px 12px 0px var(--ink-deep);
+      max-width: 680px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 34px 28px;
+      position: relative;
+      border-radius: 8px;
+      animation: modal-pop 0.24s var(--spring-snap);
+    }
+    @keyframes modal-pop {
+      0% { transform: scale(0.92); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .close-corner {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: #fcdbd3;
+      border: 2px solid var(--ink-deep);
+      width: 36px;
+      height: 36px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--page-accent);
+      box-shadow: 2px 2px 0 var(--ink-deep);
+      border-radius: 6px;
+      transition: all 0.1s ease;
+    }
+    .close-corner:hover {
+      background: var(--terracotta-rich);
+      color: #fff;
+      transform: translate(-1px, -1px);
+    }
+
+    /* Untitled UI Styled Toast Snackbar */
+    .toast-msg {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: var(--moss-green);
+      color: #ffffff;
+      padding: 12px 24px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 2px solid var(--ink-deep);
+      box-shadow: var(--hard-shadow-sm);
+      display: none;
+      z-index: 2000;
+      border-radius: 6px;
+      font-family: 'Space Grotesk', sans-serif;
+      animation: toast-in 0.25s var(--spring-snap);
+    }
+    @keyframes toast-in {
+      from { transform: translateY(10px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Whimsical & Clumsy Discovery Stickers */
+    .whimsical-sticker {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #fdf5b4;
+      border: 2px dashed var(--ink-deep);
+      box-shadow: 3px 3px 0px var(--ink-deep);
+      padding: 6px 13px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--page-accent);
+      cursor: pointer;
+      border-radius: 4px;
+      transition: transform 0.2s var(--spring-snap), box-shadow 0.2s ease, background 0.15s;
+      user-select: none;
+      text-decoration: none;
+    }
+    .whimsical-sticker:hover {
+      transform: scale(1.07) rotate(0deg) !important;
+      box-shadow: 5px 5px 0px var(--ink-deep);
+      background: #fef08a;
+    }
+    .sticker-peach {
+      background: #fedcd2;
+      border-color: var(--page-accent);
+      color: var(--page-accent);
+    }
+    .sticker-mint {
+      background: #e1f3d8;
+      border-color: #27481f;
+      color: #27481f;
+    }
+    .sticker-sky {
+      background: #e0f2fe;
+      border-color: #0369a1;
+      color: #0369a1;
+    }
+    .floating-nudge-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin: 18px 0 6px;
+    }
+
+    /* ---- Floating paper confetti in the outer margins ---- */
+    .confetti {
+      position: absolute;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.85;
+      animation: confetti-float 9s ease-in-out infinite;
+    }
+    .confetti.c1 { left: -62px; top: 168px;  width: 26px; height: 26px; background: var(--hue-marigold); border: 2.5px solid var(--ink-deep); border-radius: 50%; }
+    .confetti.c2 { left: -78px; top: 340px;  width: 26px; height: 24px; background: var(--hue-teal);     border: 2.5px solid var(--ink-deep); clip-path: polygon(50% 0%, 100% 100%, 0% 100%); animation-delay: -2.4s; }
+    .confetti.c3 { right: -70px; top: 250px; width: 28px; height: 28px; background: var(--hue-indigo);   border: 2.5px solid var(--ink-deep); transform: rotate(18deg); animation-delay: -4.1s; }
+    .confetti.c4 { right: -80px; top: 470px; width: 24px; height: 24px; background: var(--hue-rose);     border: 2.5px solid var(--ink-deep); border-radius: 50%; animation-delay: -6.3s; }
+    .confetti.c5 { left: -70px; top: 560px;  width: 24px; height: 24px; background: var(--hue-violet);   border: 2.5px solid var(--ink-deep); clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); animation-delay: -1.2s; }
+    @keyframes confetti-float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50%      { transform: translateY(-16px) rotate(14deg); }
+    }
+    @media (max-width: 1240px) { .confetti { display: none; } }
+
+    /* ---- Per-page accent colour: spine, tinted wash, watermark glyph ---- */
+    .folio-page {
+      position: relative;
+      box-shadow: inset 9px 0 0 var(--page-accent);
+      background-image: linear-gradient(168deg, var(--page-accent-soft) 0%, rgba(255, 255, 255, 0) 320px);
+    }
+    .folio-page::after {
+      content: attr(data-glyph);
+      position: absolute;
+      top: 6px;
+      right: 26px;
+      font-family: 'Padyakke Expanded One', sans-serif;
+      font-size: 8.5rem;
+      line-height: 1;
+      color: var(--page-accent);
+      opacity: 0.09;
+      z-index: -1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Content of the active page rises in on every page change */
+    .folio-page.is-active > div:first-of-type {
+      animation: page-rise 0.5s var(--spring-fluid) both;
+    }
+    @keyframes page-rise {
+      0%   { opacity: 0; transform: translateY(16px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---- Colour-coded folder tabs ---- */
+    .m3-tab {
+      background: var(--tab-soft, var(--sand-cloth));
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .m3-tab::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--tab-ink, var(--terracotta-rich));
+      border: 1.5px solid var(--ink-deep);
+      flex-shrink: 0;
+    }
+    .m3-tab:hover {
+      background: var(--tab-soft, #e4d0b5);
+      filter: saturate(1.35) brightness(0.99);
+    }
+    .m3-tab.active {
+      color: var(--tab-ink, var(--clay-burnt));
+      box-shadow: 0 -5px 0 var(--tab-ink, var(--terracotta-rich));
+    }
+    .m3-tab.active::before {
+      animation: pulse-dot 1.9s infinite ease-in-out;
+    }
+
+    /* ---- Multi-colour chips ---- */
+    .m3-chip.tone-1 { background: var(--hue-terracotta-soft); border-color: var(--hue-terracotta); color: #8a2a14; box-shadow: 2px 2px 0 var(--hue-terracotta); }
+    .m3-chip.tone-2 { background: var(--hue-indigo-soft);     border-color: var(--hue-indigo);     color: #24399b; box-shadow: 2px 2px 0 var(--hue-indigo); }
+    .m3-chip.tone-3 { background: var(--hue-forest-soft);     border-color: var(--hue-forest);     color: #235624; box-shadow: 2px 2px 0 var(--hue-forest); }
+    .m3-chip.tone-4 { background: var(--hue-rose-soft);       border-color: var(--hue-rose);       color: #9c1749; box-shadow: 2px 2px 0 var(--hue-rose); }
+    .m3-chip.tone-5 { background: var(--hue-marigold-soft);   border-color: var(--hue-marigold);   color: #8a5802; box-shadow: 2px 2px 0 var(--hue-marigold); }
+    .m3-chip:hover { filter: brightness(1.04); }
+
+    /* ---- Colour-coded metric cards ---- */
+    .metric-card { border-top-width: 7px; border-top-style: solid; }
+    .metric-card.tone-a { border-top-color: var(--hue-rose);     background: linear-gradient(180deg, var(--hue-rose-soft) 0%, var(--md-sys-color-surface-container) 78%); }
+    .metric-card.tone-b { border-top-color: var(--hue-teal);     background: linear-gradient(180deg, var(--hue-teal-soft) 0%, var(--md-sys-color-surface-container) 78%); }
+    .metric-card.tone-c { border-top-color: var(--hue-indigo);   background: linear-gradient(180deg, var(--hue-indigo-soft) 0%, var(--md-sys-color-surface-container) 78%); }
+    .metric-card.tone-a .metric-num { color: var(--hue-rose); }
+    .metric-card.tone-b .metric-num { color: var(--hue-teal); }
+    .metric-card.tone-c .metric-num { color: var(--hue-indigo); }
+
+    /* ---- Extra button colourways ---- */
+    .btn-indigo { background: var(--hue-indigo); color: #fff; }
+    .btn-indigo:hover { background: #22378f; }
+    .btn-teal   { background: var(--hue-teal);   color: #fff; }
+    .btn-teal:hover { background: #0a635b; }
+    .btn-violet { background: var(--hue-violet); color: #fff; }
+    .btn-violet:hover { background: #57309a; }
+
+    /* ---- Extra sticker colourways ---- */
+    .sticker-violet   { background: var(--hue-violet-soft);   border-color: var(--hue-violet); color: #52308c; }
+    .sticker-marigold { background: var(--hue-marigold-soft); border-color: var(--hue-marigold); color: #7d5002; }
+
+    /* ---- Bio quote: accent-tinted with a big colour quote mark ---- */
+    .bio-prose {
+      border-left: 6px solid var(--page-accent);
+      background: linear-gradient(100deg, var(--page-accent-soft) 0%, var(--md-sys-color-surface-container) 62%);
+      overflow: hidden;
+    }
+    .bio-prose::after {
+      content: "\201D";
+      position: absolute;
+      right: 8px;
+      bottom: -34px;
+      font-family: 'Benne', serif;
+      font-size: 6.5rem;
+      color: var(--page-accent);
+      opacity: 0.16;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    /* ---- Coloured page dots in the dock ---- */
+    .dock-dots { display: flex; align-items: center; gap: 9px; }
+    .dock-dot {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: 2.2px solid var(--ink-deep);
+      background: var(--md-sys-color-surface-card);
+      cursor: pointer;
+      padding: 0;
+      transition: transform 0.18s var(--spring-snap), box-shadow 0.18s ease;
+    }
+    .dock-dot:hover { transform: scale(1.28); }
+    .dock-dot.active {
+      background: var(--dot-ink);
+      box-shadow: 0 0 0 3.5px color-mix(in srgb, var(--dot-ink) 26%, transparent);
+      transform: scale(1.22);
+    }
+
+    /* ---- Cards inherit their page's hue, with per-card variation ---- */
+    .scrap-card {
+      border-top: 6px solid var(--card-ink, var(--page-accent));
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--card-ink, var(--page-accent)) 12%, #fffdf8) 0%,
+                                var(--md-sys-color-surface-container) 60%);
+    }
+    .scrap-card h3 {
+      color: var(--card-ink, var(--page-accent));
+      border-bottom-color: var(--card-ink, var(--page-accent));
+    }
+    .scrap-card .entry-tag {
+      background: color-mix(in srgb, var(--card-ink, var(--page-accent)) 16%, #fffdf8);
+      color: var(--card-ink, var(--page-accent));
+    }
+    .entry-item strong { color: var(--ink-deep); }
+
+    /* ---- Section headings get a colour underline ---- */
+    .folio-page h2 {
+      display: inline-block;
+      padding-bottom: 3px;
+      border-bottom: 5px solid var(--page-accent);
+    }
+
+    /* ---- Respect reduced-motion preferences ---- */
+    @media (prefers-reduced-motion: reduce) {
+      .niche-rays, .spectrum-ribbon, .niche-seal, .confetti,
+      .washi-tape-strip, .uui-badge-dot, .m3-tab.active::before {
+        animation: none !important;
+      }
+      .folio-page.is-active > div:first-of-type { animation: none; }
+      .folio-track { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="folio-shell">
+    
+    <!-- Floating Clumsy Post-It & Tape Accents -->
+    <div class="binder-clip" title="Archival Clip"></div>
+    <div class="washi-tape-strip tape-top-center"></div>
+    <div class="washi-tape-strip tape-corner-right"></div>
+    <div class="washi-tape-strip tape-bottom-left"></div>
+    <div class="washi-tape-strip tape-bottom-right"></div>
+
+    <!-- Paper confetti drifting in the outer margins -->
+    <span class="confetti c1" aria-hidden="true"></span>
+    <span class="confetti c2" aria-hidden="true"></span>
+    <span class="confetti c3" aria-hidden="true"></span>
+    <span class="confetti c4" aria-hidden="true"></span>
+    <span class="confetti c5" aria-hidden="true"></span>
+
+    <!-- Material 3 Segmented Folder Tabs, one hue per section -->
+    <nav class="m3-tab-deck" id="folioTabs" aria-label="Folio Sections">
+      <button class="m3-tab active" style="--tab-ink: var(--hue-terracotta); --tab-soft: var(--hue-terracotta-soft);" onclick="goToPage(0)">ಪರಿಚಯ (Profile)</button>
+      <button class="m3-tab" style="--tab-ink: var(--hue-forest); --tab-soft: var(--hue-forest-soft);" onclick="goToPage(1)">ಅರಣ್ಯನಿ (Novel)</button>
+      <button class="m3-tab" style="--tab-ink: var(--hue-indigo); --tab-soft: var(--hue-indigo-soft);" onclick="goToPage(2)">ಬರಹ & ಅಂಕಣ (Writing)</button>
+      <button class="m3-tab" style="--tab-ink: var(--hue-rose); --tab-soft: var(--hue-rose-soft);" onclick="goToPage(3)">ಅಲ್ಪನ ಜಲ್ಪನೆಗಳು (Musings)</button>
+      <button class="m3-tab" style="--tab-ink: var(--hue-teal); --tab-soft: var(--hue-teal-soft);" onclick="goToPage(4)">ಅವಕಾಶಗಳು (Opportunities)</button>
+      <button class="m3-tab" style="--tab-ink: var(--hue-violet); --tab-soft: var(--hue-violet-soft);" onclick="goToPage(5)">ಶ್ರೀಗುರು & ಸಂಪರ್ಕ (Connect)</button>
+    </nav>
+
+    <main class="folio-stage" id="folioStage">
+      <div class="spectrum-ribbon" aria-hidden="true"></div>
+      <div class="folio-track" id="folioTrack">
+        
+        <!-- PAGE 1: DOSSIER / PROFILE -->
+        <section class="folio-page is-active" id="page-0" aria-label="Profile Page" data-glyph="ಪ"
+                 style="--page-accent: var(--hue-terracotta); --page-accent-soft: var(--hue-terracotta-soft);">
+          <div>
+            <div class="hero-band">
+              <div class="hero-copy">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+                  <span class="tactile-stamp stamp-terracotta">NBT AUTHOR</span>
+                  <span class="tactile-stamp stamp-ochre">LEGAL SCHOLAR</span>
+                  <span class="tactile-stamp stamp-moss">GAMAKA</span>
+                </div>
+
+                <h1 class="author-title">ತೇಜಸ್ ಎಚ್ ಬಾಡಾಲ</h1>
+                <span class="author-sub">TEJAS H. BADALA</span>
+
+                <!-- M3 Assist Chips, one hue each -->
+                <div class="m3-chip-bar">
+                  <span class="m3-chip tone-1" style="--i: -1;">ಬರಹಗಾರ (Writer)</span>
+                  <span class="m3-chip tone-2" style="--i: 1;">ವಕೀಲ (Advocate/Legal Scholar)</span>
+                  <span class="m3-chip tone-3" style="--i: -0.5;">ಗಮಕ ವ್ಯಾಖ್ಯಾನಕಾರ (Gamaka Exponent)</span>
+                  <span class="m3-chip tone-4" style="--i: 1.5;">ಪ್ರವಾಸಿ & ಅಂಕಣಕಾರ (Columnist)</span>
+                  <span class="m3-chip tone-5" style="--i: 0;">ಅನುವಾದಕ (Translator)</span>
+                </div>
+              </div>
+
+              <!-- Portrait, framed in an arch-topped niche -->
+              <div class="portrait-frame">
+                <div class="portrait-niche" title="ತೇಜಸ್!">
+                  <span class="niche-rays" aria-hidden="true"></span>
+                  <span class="niche-halo" aria-hidden="true"></span>
+                  <img
+                    src="__PORTRAIT_DATA_URI__"
+                    alt="ತೇಜಸ್ ಎಚ್ ಬಾಡಾಲ — Tejas H. Badala, illustrated portrait"
+                    class="portrait-img"
+                    onerror="this.onerror=null; this.src='profile.png';"
+                  />
+                  <span class="niche-caption">ತೇಜಸ್ ಎಚ್ ಬಾಡಾಲ • TEJAS H. BADALA</span>
+                </div>
+                <span class="niche-tape" aria-hidden="true"></span>
+                <div class="niche-seal"><strong>NBT</strong>PM-YUVA<br>AUTHOR</div>
+
+                <!-- Sticky note pinned beside the portrait -->
+                <div class="post-it-doodle" onclick="goToPage(3)">
+                  <strong>ನಾನು ಕಪಿ!</strong>
+                  <div style="font-size: 0.72rem; margin-top: 2px; font-weight: normal;">ಅಲ್ಪನ ಜಲ್ಪನೆಗಳು ಓದಿರಿ ↗</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="garland-divider" aria-hidden="true"></div>
+
+            <div class="bio-prose">
+              “ಹುಟ್ಟಿದ್ದು ಬೆಂಗಳೂರು; ಬಾಳಿಗೆ ಭದ್ರಬುನಾದಿ ಹಾಕಿದ್ದು ಚಿಂತಾಮಣಿಯ ಜ್ಯೋತಿ ಶಾಲೆ. ಬೆಳಕಾಗಿದ್ದು ಮೈಸೂರಿನ ಎಕ್ಸೆಲ್ ಪಬ್ಲಿಕ್ ಶಾಲೆ. ಭರವಸೆ ತುಂಬಿದ್ದು ವಿಜಯ ಕಾಲೇಜು, ಶಾರದಾ ವಿದ್ಯಾ ಮಂದಿರ. ಕಾನೂನಿನ ಸತ್ವ ತುಂಬಿದ್ದು ಮೈಸೂರಿನ <strong>ಜೆಎಸ್ಎಸ್ (JSS) ಕಾನೂನು ಕಾಲೇಜು</strong>. ಈಗ ಸಾಹಿತ್ಯ, ಶಾಸ್ತ್ರ, ಸಂಗೀತ ಹಾಗೂ ಕಾನೂನಿನ ಕವಲುದಾರಿಯಲ್ಲಿ ಮೌಲ್ಯವನ್ನು ಅರಸುತ್ತಾ...”
+            </div>
+
+            <!-- Untitled UI Inspired Metric Overview -->
+            <div class="metric-grid">
+              <div class="metric-card tone-a">
+                <div class="metric-num">೪೦,೦೦೦+</div>
+                <div class="metric-label">ಕಾದಂಬರಿಯ ಪ್ರತಿಗಳು ಮಾರಾಟ</div>
+              </div>
+              <div class="metric-card tone-b">
+                <div class="metric-num">೭೫ / ೧೬,೦೦೦</div>
+                <div class="metric-label">ರಾಷ್ಟ್ರೀಯ PM-YUVA ಆಯ್ಕೆ</div>
+              </div>
+              <div class="metric-card tone-c">
+                <div class="metric-num">೨೨</div>
+                <div class="metric-label">ಭಾಷೆಗಳ ರಾಷ್ಟ್ರೀಯ ಸ್ಪರ್ಧೆ</div>
+              </div>
+            </div>
+
+            <!-- Quirky Asymmetrical Discovery Nudges -->
+            <div class="floating-nudge-wrap">
+              <div class="whimsical-sticker sticker-peach" style="transform: rotate(-1.8deg);" onclick="goToPage(5)">
+                <span>👀 ಇವನ ಬಗ್ಗೆ ಮೊದಲೇ ಗೊತ್ತಾ? → ‘ಶ್ರೀಗುರು’ಗಳನ್ನು ನೋಡಿ! (Know his Gurus)</span>
+              </div>
+              <div class="whimsical-sticker sticker-mint" style="transform: rotate(2.1deg);" onclick="goToPage(3)">
+                <span>🐒 ಬೋರಾಯ್ತಾ? ಕಪಿ ಬ್ಲಾಗ್ ಓದಿ! (Got bored? Try this blog) ↗</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 20px;">
+            <button class="jitter-btn" onclick="goToPage(1)">
+              <span>📖 ಕಾದಂಬರಿ ‘ಅರಣ್ಯನಿ’ ನೋಡಿ →</span>
+            </button>
+            <button class="jitter-btn btn-sand" onclick="openExcerpt()">
+              <span>📜 ಲೇಖಕರ ಮಾತು / Excerpt</span>
+            </button>
+            <button class="jitter-btn btn-secondary" onclick="goToPage(5)">
+              <span>📬 ಸಂಪರ್ಕಿಸಿ / Connect</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- PAGE 2: NOVEL ARANYANI -->
+        <section class="folio-page" id="page-1" aria-label="Aranyani Novel Page" data-glyph="ಅ"
+                 style="--page-accent: var(--hue-forest); --page-accent-soft: var(--hue-forest-soft);">
+          <div class="book-curtain">
+            
+            <!-- 3D Tactile Hardcover Mockup -->
+            <div class="book-cover">
+              <div class="book-spine-effect"></div>
+              <div>
+                <div style="font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.9;">National Book Trust, India</div>
+                <div style="font-size: 0.7rem; letter-spacing: 2px; color: #fde68a;">PM-YUVA SCHEME NOVEL</div>
+                <div class="book-title-kannada">ಅರಣ್ಯನಿ</div>
+                <div style="font-size: 1rem; font-family: 'Benne', serif; letter-spacing: 1px;">ARANYANI</div>
+              </div>
+
+              <div style="background: rgba(36, 20, 13, 0.48); padding: 12px; border: 1.5px dashed rgba(255,255,255,0.45); margin: 12px 0; border-radius: 4px;">
+                <div style="font-size: 0.72rem; text-transform: uppercase; color: #fde68a; font-family: 'Space Grotesk';">Thematic Arc</div>
+                <div style="font-size: 1.05rem;">ಪಶ್ಚಿಮ ಘಟ್ಟ • ಕಲರಿಪಯಟ್ಟು • ದೈವಾರಾಧನೆ • ಸ್ವಾತಂತ್ರ್ಯ</div>
+              </div>
+
+              <div>
+                <div style="font-size: 0.95rem; font-family: 'Benne', serif; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 6px;">
+                  ತೇಜಸ್ ಎಚ್ ಬಾಡಾಲ
+                </div>
+                <div class="tactile-stamp stamp-moss" style="margin-top: 8px; font-size: 0.72rem;">40,000+ COPIES SOLD</div>
+              </div>
+            </div>
+
+            <!-- Content Area -->
+            <div>
+              <div class="uui-badge-group" style="margin-bottom: 8px;">
+                <span class="uui-badge-dot"></span>
+                <span>MAJOR WORK • KANNADA FICTION</span>
+              </div>
+              
+              <h2 style="font-family: 'Padyakke Expanded One', cursive; font-size: 1.6rem; margin: 8px 0 6px; line-height: 1.3; color: var(--page-accent);">
+                ಅರಣ್ಯನಿ : ಸ್ವಾತಂತ್ರ್ಯದ ರೋಚಕ ಪಯಣ
+              </h2>
+              <p style="font-weight: 700; color: var(--page-accent); margin-bottom: 12px; font-family: 'Space Grotesk', sans-serif; font-size: 0.92rem;">
+                NATIONAL BOOK TRUST (NBT) • MINISTRY OF EDUCATION, GOVT OF INDIA
+              </p>
+
+              <p style="margin-bottom: 12px; font-size: 1.25rem;">
+                ಕೇಂದ್ರ ಸರ್ಕಾರದ <strong>PM-YUVA</strong> ಯೋಜನೆಯಡಿಯಲ್ಲಿ ದೇಶದಾದ್ಯಂತ 22 ಭಾಷೆಗಳಲ್ಲಿ ಸಲ್ಲಿಕೆಯಾದ <strong>16,000 ಪುಸ್ತಕ ಪ್ರಸ್ತಾವನೆಗಳಲ್ಲಿ</strong> ಆಯ್ಕೆಯಾದ ರಾಷ್ಟ್ರದ 75 ಕೃತಿಗಳಲ್ಲಿ ಒಂದು ‘ಅರಣ್ಯನಿ’.
+              </p>
+              
+              <p style="margin-bottom: 16px; color: var(--ink-muted); font-size: 1.18rem;">
+                ಪಶ್ಚಿಮ ಘಟ್ಟಗಳ ದಟ್ಟ ಕಾನನದಲ್ಲಿ ನಡೆದ ನೈಜ ಸ್ವಾತಂತ್ರ್ಯ ಹೋರಾಟದ ಘಟನೆಗಳನ್ನಾಧರಿಸಿ ಹೆಣೆದಿರುವ ರೋಚಕ ಕಾದಂಬರಿ. ಸಾಂಪ್ರದಾಯಿಕ ಸಮರಕಲೆಯಾದ ಕಲರಿಪಯಟ್ಟು, ತೆಂಕುತಿಟ್ಟಿನ ದೈವಾರಾಧನೆ ಮತ್ತು ನೈಸರ್ಗಿಕ ವಿಸ್ಮಯಗಳ ಸುತ್ತಲೂ ಸುತ್ತುವ ಅಪರೂಪದ ಕಥಾವಸ್ತು.
+              </p>
+
+              <div style="display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 20px;">
+                <span class="tactile-stamp stamp-ochre">22 ಭಾಷೆಗಳ ಸ್ಪರ್ಧೆ</span>
+                <span class="tactile-stamp stamp-terracotta">16,000 ಪ್ರಸ್ತಾವನೆಗಳು</span>
+                <span class="tactile-stamp stamp-moss">೪೦,೦೦೦ಕ್ಕೂ ಹೆಚ್ಚು ಮುದ್ರಣ</span>
+              </div>
+
+              <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                <a href="https://www.amazon.in/dp/B0D5B4Y82F" target="_blank" rel="noopener" class="jitter-btn">
+                  <span>🛒 Amazon ನಲ್ಲಿ ಕೊಳ್ಳಿ</span>
+                </a>
+                <button class="jitter-btn btn-secondary" onclick="openExcerpt()">
+                  <span>📖 ಮೊದಲ ಪುಟ ಓದಿ</span>
+                </button>
+              </div>
+
+              <!-- Random Jump Stickers on Aranyani Page -->
+              <div class="floating-nudge-wrap" style="margin-top: 22px;">
+                <div class="whimsical-sticker sticker-peach" style="transform: rotate(-1.5deg);" onclick="goToPage(0)">
+                  <span>↩️ ಕಾದಂಬರಿ ಸಾಕಾ? ಪರಿಚಯಕ್ಕೆ ವಾಪಸ್! (Go back to Parichaya)</span>
+                </div>
+                <div class="whimsical-sticker" style="transform: rotate(2.4deg);" onclick="goToPage(3)">
+                  <span>☕ ಕಾದಂಬರಿ ಓದಿ ತಲೆ ಬಿಸಿಯಾಯ್ತಾ? → ಅಲ್ಪನ ಜಲ್ಪನೆಗಳು ಓದಿ!</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- PAGE 3: WRITING & TRANSLATION -->
+        <section class="folio-page" id="page-2" aria-label="Writing and Translation Page" data-glyph="ಬ"
+                 style="--page-accent: var(--hue-indigo); --page-accent-soft: var(--hue-indigo-soft);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+              <h2 style="font-family: 'Padyakke Expanded One', cursive; font-size: 1.45rem; color: var(--page-accent);">
+                ಅಂಕಣ, ಅನುವಾದ & ಸಾಹಿತ್ಯ ಕೃತಿಗಳು
+              </h2>
+              <span class="tactile-stamp stamp-ochre">LITERARY CATALOGUE</span>
+            </div>
+
+            <div class="duo-grid">
+              <!-- Scrap Card 1 -->
+              <article class="scrap-card dog-ear" style="--card-ink: var(--hue-indigo);">
+                <span class="tactile-stamp stamp-ochre" style="float: right;">COLUMNS</span>
+                <h3><span>ಅಂಕಣ & ಪ್ರಬಂಧಗಳು</span></h3>
+                <ul class="entry-list">
+                  <li class="entry-item">
+                    <span class="entry-tag">ನಿಯತಕಾಲಿಕ</span>
+                    <strong>‘ವಿಕ್ರಮ’ ವಾರಪತ್ರಿಕೆ ಅಂಕಣ</strong>
+                    <p style="font-size: 1.12rem; margin-top: 4px; color: var(--ink-muted);">
+                      ಸಾಮಾಜಿಕ, ರಾಜಕೀಯ, ವೈಚಾರಿಕ ಜಾಗೃತಿಯ ಚಿಂತನಶೀಲ ವಿಶ್ಲೇಷಣೆಗಳು ಹಾಗೂ ಸಾಂಸ್ಕೃತಿಕ ಪರಂಪರೆಯ ಆಲೋಚನೆಗಳು.
+                    </p>
+                  </li>
+                  <li class="entry-item">
+                    <span class="entry-tag">ಪ್ರವಾಸ-ಸಂಗೀತ</span>
+                    <strong>‘ಪ್ರವಾಸಿಪ್ರಪಂಚ’ ಅಂಕಣ</strong>
+                    <p style="font-size: 1.12rem; margin-top: 4px; color: var(--ink-muted);">
+                      ಸಂಗೀತಯಾತ್ರೆ, ತಿಂಡಿ ಟೂರುಗಳು, ಭಾರತದ ದೇಗುಲಗಳ ವಾಸ್ತುಶಿಲ್ಪ ಹಾಗೂ ನೆಲದ ಸೊಗಡಿನ ಕಥನಗಳು.
+                    </p>
+                  </li>
+                  <li class="entry-item">
+                    <span class="entry-tag">ಪ್ರಬಂಧ ಸಂಕಲನ</span>
+                    <strong>"ತೇಜು-ಗೋಜು"</strong>
+                    <p style="font-size: 1.12rem; margin-top: 4px; color: var(--ink-muted);">
+                      ಸ್ವಯಂ-ವಿಡಂಬನಾ ಲಲಿತಪ್ರಬಂಧಗಳ ಸಂಕಲನ; ನಿತ್ಯ ಜೀವನದ ತಮಾಷೆ, ಯುವಮನಸ್ಸಿನ ತೊಳಲಾಟಗಳ ಸಾಹಿತ್ಯಿಕ ಹೊಳಹು.
+                    </p>
+                  </li>
+                  <li class="entry-item">
+                    <span class="entry-tag">ಕವನ ಸಂಕಲನ</span>
+                    <strong>"ನಕ್ಷತ್ರಗಳ ಜೋಡಣೆ"</strong>
+                    <p style="font-size: 1.12rem; margin-top: 4px; color: var(--ink-muted);">
+                      ತನ್ನ 13ನೇ ವಯಸ್ಸಿನ ಬಾಲ್ಯದಲ್ಲೇ ಬರೆದು ಪ್ರಕಟಿಸಿದ ಚೊಚ್ಚಲ ಭಾವಪೂರ್ಣ ಕವನಗಳ ಗುಚ್ಛ.
+                    </p>
+                  </li>
+                </ul>
+              </article>
+
+              <!-- Scrap Card 2 -->
+              <article class="scrap-card dog-ear" style="--card-ink: var(--hue-sky);">
+                <span class="tactile-stamp stamp-terracotta" style="float: right;">ACADEMICS</span>
+                <h3><span>ಅನುವಾದ & ಕಾನೂನು</span></h3>
+                <ul class="entry-list">
+                  <li class="entry-item">
+                    <span class="entry-tag">ಆಂಗ್ಲಾನುವಾದ</span>
+                    <strong>‘Boundless Bhyrappa’</strong>
+                    <p style="font-size: 1.12rem; margin-top: 4px; color: var(--ink-muted);">
+                      ಶ್ರೀ ದೀಕ್ಷಿತ್ ನಾಯರ್ ಅವರ ಹೆಸರಾಂತ ಕೃತಿ <em>‘ಎತ್ತರೆತ್ತರ ಭೈರಪ್ಪ’</em> ನ ಆಂಗ್ಲ ಅನುವಾದ ಕಾರ್ಯ.
+                    </p>
+                  </li>
+                  <li class="entry-item">
+                    <span class="entry-tag">ಶೈಕ್ಷಣಿಕ ಅನುವಾದ</span>
+                    <strong>‘Topper's Secrets’</strong>
+                    <p style="font-size: 1.12rem; margin-top: 4px; color: var(--ink-muted);">
+                      ಶ್ರೀ ದೀಕ್ಷಿತ್ ನಾಯರ್ ಅವರ ಮೂಲ ಕನ್ನಡ ಕೃತಿ ‘ಟಾಪರ್ಸ್ ಸೀಕ್ರೆಟ್ಸ್’ನ ಆಂಗ್ಲಾನುವಾದ (English translation of Deekshith Nair's original in Kannada).
+                    </p>
+                  </li>
+                  <li class="entry-item">
+                    <span class="entry-tag">ಕಾಲೇಜು ಪತ್ರಿಕೆ</span>
+                    <strong>ಜೆಎಸ್ಎಸ್ ಕಾನೂನು ಕಾಲೇಜು, ಮೈಸೂರು</strong>
+                    <p style="font-size: 1.12rem; margin-top: 4px; color: var(--ink-muted);">
+                      ಕಾಲೇಜಿನ ಪತ್ರಿಕೆ ‘ಬೆಳ್ನುಡಿ’ಯ ಸಂಪಾದಕ (Was editor of the college magazine ‘Belnudi’). ಇದರ ವಿವರ ಹಾಗೂ ಕೊಂಡಿಯನ್ನು ಜೆಎಸ್ಎಸ್ ಕಾನೂನು ಕಾಲೇಜಿನ ಅಧಿಕೃತ ಜಾಲತಾಣದಲ್ಲಿ (<a href="https://www.jsslawcollege.in" target="_blank" rel="noopener" style="color: var(--terracotta-rich); text-decoration: underline; font-weight: bold;">jsslawcollege.in</a>) ಕಾಣಬಹುದು.
+                    </p>
+                  </li>
+                </ul>
+              </article>
+            </div>
+
+            <!-- Fun Wandering Stickers on Writing Page -->
+            <div class="floating-nudge-wrap" style="margin-top: 20px; justify-content: flex-end;">
+              <div class="whimsical-sticker sticker-mint" style="transform: rotate(-2deg);" onclick="goToPage(3)">
+                <span>🐒 ಗಂಭೀರ ಸಾಹಿತ್ಯ ಸಾಕು! ಬ್ಲಾಗ್‌ನಲ್ಲಿ ತಮಾಷೆ ನೋಡಿ (Got bored? Try this blog) →</span>
+              </div>
+              <div class="whimsical-sticker sticker-peach" style="transform: rotate(1.6deg);" onclick="goToPage(0)">
+                <span>🏃‍♂️ ಮೊದಲ ಪುಟಕ್ಕೆ ಓಟ! (Back to Parichaya)</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PAGE 4: ALPANA JALPANEGALU (BLOG / MUSINGS) -->
+        <section class="folio-page" id="page-3" aria-label="Alpana Jalpanegalu Musings Page" data-glyph="ಜ"
+                 style="--page-accent: var(--hue-rose); --page-accent-soft: var(--hue-rose-soft);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 14px;">
+              <div>
+                <h2 style="font-family: 'Padyakke Expanded One', cursive; font-size: 1.5rem; color: var(--page-accent);">
+                  ಅಲ್ಪನ ಜಲ್ಪನೆಗಳು
+                </h2>
+                <span style="font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--terracotta-rich); letter-spacing: 0.5px;">
+                  WHIMSICAL MUSINGS & PRATTLES OF AN IDLE MIND
+                </span>
+              </div>
+              <div class="uui-badge-group">
+                <span class="uui-badge-dot" style="background: var(--ochre-gold);"></span>
+                <span>BLOG: ನಾನು ಕಪಿ!</span>
+              </div>
+            </div>
+
+            <!-- Blog Manifesto Card -->
+            <div style="background: var(--md-sys-color-surface-container); border: 2.5px solid var(--ink-deep); box-shadow: var(--hard-shadow-sm); padding: 20px; margin-bottom: 20px; border-left: 6px solid var(--ochre-gold); border-radius: 6px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+                <strong style="font-family: 'Padyakke Expanded One', cursive; font-size: 1.2rem; color: var(--page-accent);">
+                  ನಾನು ಕಪಿ! (naanukapi.blogspot.com)
+                </strong>
+                <a href="https://naanukapi.blogspot.com" target="_blank" rel="noopener" class="tactile-stamp stamp-terracotta" style="text-decoration: none; cursor: pointer;">
+                  ಬ್ಲಾಗ್ ತೆರೆಯಿರಿ ↗
+                </a>
+              </div>
+              <p style="font-size: 1.25rem; line-height: 1.7; color: var(--ink-deep);">
+                “ಮಾಡಕ್ಕೆ ಬೇಕಾದಷ್ಟು ಕೆಲಸವಿದ್ದಾಗ, ಅಥವಾ ಏನೂ ಕೆಲಸವೇ ಇಲ್ಲದಾಗ ತಲೆಯಲ್ಲಿ ಹೊಳೆಯುವ ಅಥವಾ ಒತ್ತಾಯಪೂರ್ವಕವಾಗಿ ಹೊಳೆಯಿಸಿಕೊಳ್ಳುವ ಯೋಚನೆಗಳ ಗುಚ್ಛವಿದು! ಅವರವರ ದೃಷ್ಟಿಕೋನದಲ್ಲಿ ಅವರವರ ಕೆಲಸಗಳೇ ಮಹತ್ತರ. ನನಗಂತೂ ಎಲ್ಲರ ಕೆಲಸವೂ ಮಹೋನ್ನತವೇ; ಪಾಪ ಅವರು ಅದೆಷ್ಟು ಕಷ್ಟ ಪಟ್ಟು ಬೆವರು ಸುರಿಸಿ ಆ ಕೆಲಸ ಮಾಡುತ್ತಾರಲ್ಲ!”
+              </p>
+            </div>
+
+            <div class="duo-grid">
+              <article class="scrap-card" style="--card-ink: var(--hue-rose);">
+                <span class="tactile-stamp stamp-ochre" style="float: right;">ಅಂತರಂಗ</span>
+                <h3><span>ಕಪಿ ಮನಸ್ಸಿನ ಹೊಳಹುಗಳು</span></h3>
+                <p style="font-size: 1.2rem; line-height: 1.68; color: var(--ink-deep);">
+                  ಜೀವನ, ಸಂಸ್ಕೃತಿ, ದೇವಾಲಯಗಳ ದರ್ಶನ, ಶಾಸ್ತ್ರ-ಸಾಹಿತ್ಯದ ತರಂಗಗಳು ಮತ್ತು ನಿತ್ಯ ಜೀವನದ ನಗೆಹೊನಲುಗಳ ಬಗ್ಗೆ ಕಪಿಮನಸ್ಸು ಕಟ್ಟಿಕೊಡುವ ರಸವತ್ತಾದ ಪ್ರಬಂಧಗಳು.
+                </p>
+                <div style="margin-top: 14px; border-top: 1px dotted rgba(54,25,14,0.35); padding-top: 10px; font-size: 1.15rem; color: var(--ink-muted);">
+                  ✦ ನಿರಂತರವಾಗಿ ಹರಿಯುವ ಲೇಖನಗಳು, ಪ್ರವಾಸಾನುಭವಗಳು ಹಾಗೂ ಸ್ವಾರಸ್ಯಕರ ಚಿಂತನೆಗಳು.
+                </div>
+              </article>
+
+              <article class="scrap-card" style="--card-ink: var(--hue-violet);">
+                <span class="tactile-stamp stamp-terracotta" style="float: right;">DISPATCHES</span>
+                <h3><span>ಬ್ಲಾಗ್ ಪುಟಗಳಿಂದ ಆಯ್ದ ಮಾತು</span></h3>
+                <p style="font-size: 1.2rem; line-height: 1.68; color: var(--ink-muted); font-style: italic;">
+                  “ಮಾಡಕ್ಕೆ ಬೇಕಾದಷ್ಟು ಕೆಲಸವಿದ್ದಾಗ, ಅಥವಾ ಏನೂ ಕೆಲಸವೇ ಇಲ್ಲದಾಗ ತಲೆಯಲ್ಲಿ ಹೊಳೆಯುವ ಅಥವಾ ಒತ್ತಾಯ ಮಾಡಿ ಹುಟ್ಟಿಸುವ ಕೆಲವು ಬರಹಗಳು. ಕೆಲವು ತೀರಾ ತರಲೆ ಎನಿಸಬಹುದು, ಅಥವಾ ಇದು ಬರೆಯುವ ಅವಶ್ಯಕತೆಯೇ ಇರಲಿಲ್ಲ ಎನಿಸಬಹುದು. ಆದರೆ ಒಮ್ಮೆ ಓದಿದಾಗ ನನಗಂತೂ ಖುಷಿ ಆಗಿದ್ದುಂಟು. ನಿಮಗೂ ಆಗಬಹುದೇನೋ? ಓದಿ ನೋಡಿ!”
+                </p>
+                <div style="margin-top: 16px;">
+                  <a href="https://naanukapi.blogspot.com" target="_blank" rel="noopener" class="jitter-btn btn-sand" style="padding: 8px 18px; font-size: 0.9rem;">
+                    <span>🌐 naanukapi.blogspot.com ಓದಿ →</span>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <!-- Fun Wandering Stickers on Blog Page -->
+            <div class="floating-nudge-wrap" style="margin-top: 20px;">
+              <div class="whimsical-sticker sticker-peach" style="transform: rotate(-1.5deg);" onclick="goToPage(5)">
+                <span>🙏 ಕಪಿಯ ಮಾತು ಮುಗೀತಾ? → ಗುರುಗಳ ಚರಣಕ್ಕೆ ಬನ್ನಿ (Know his Gurus)</span>
+              </div>
+              <div class="whimsical-sticker sticker-sky" style="transform: rotate(2deg);" onclick="goToPage(0)">
+                <span>🏠 ಸಾಕು ಈ ಜಲ್ಪನೆಗಳು, ಮತ್ತೆ ಆರಂಭದ 'ಪರಿಚಯ'ಕ್ಕೆ! (Go back to Parichaya)</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PAGE 5: OPPORTUNITIES (ಅವಕಾಶಗಳು) -->
+        <section class="folio-page" id="page-4" aria-label="Opportunities Page" data-glyph="ಅ"
+                 style="--page-accent: var(--hue-teal); --page-accent-soft: var(--hue-teal-soft);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+              <h2 style="font-family: 'Padyakke Expanded One', cursive; font-size: 1.55rem; font-weight: 700; color: var(--page-accent);">
+                ಅವಕಾಶಗಳು
+              </h2>
+              <span class="tactile-stamp stamp-terracotta">NATIONAL OPPORTUNITIES</span>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
+              <div class="scrap-card dog-ear">
+                <div style="font-size: 2rem; margin-bottom: 6px;">🏛️</div>
+                <strong style="font-family: 'Padyakke Expanded One', cursive; font-size: 1.15rem; color: var(--page-accent);">ರಾಷ್ಟ್ರಪತಿ ಭವನದಲ್ಲಿ ಸನ್ಮಾನ</strong>
+                <p style="font-size: 1.16rem; margin-top: 6px; color: var(--ink-muted);">
+                  PM-YUVA ರಾಷ್ಟ್ರೀಯ ಲೇಖಕರ ಯೋಜನೆಯಡಿ ಭಾರತದ ಗೌರವಾನ್ವಿತ ರಾಷ್ಟ್ರಪತಿಗಳನ್ನು ಭೇಟಿ ಮಾಡಿ ಸನ್ಮಾನಿಸಲ್ಪಟ್ಟ ಅಪರೂಪದ ಕ್ಷಣ.
+                </p>
+              </div>
+
+              <div class="scrap-card dog-ear">
+                <div style="font-size: 2rem; margin-bottom: 6px;">🇮🇳</div>
+                <strong style="font-family: 'Padyakke Expanded One', cursive; font-size: 1.15rem; color: var(--page-accent);">ಕೆಂಪುಕೋಟೆಯ ವಿಶೇಷ ಆಹ್ವಾನಿತ</strong>
+                <p style="font-size: 1.16rem; margin-top: 6px; color: var(--ink-muted);">
+                  ದೆಹಲಿಯ ಐತಿಹಾಸಿಕ ಕೆಂಪುಕೋಟೆಯಲ್ಲಿ ಜರುಗಿದ ರಾಷ್ಟ್ರೀಯ ಸ್ವಾತಂತ್ರೋತ್ಸವ ಸಮಾರಂಭದಲ್ಲಿ ಗೌರವ ಅತಿಥಿಯಾಗಿ ಭಾಗಿ.
+                </p>
+              </div>
+
+              <div class="scrap-card dog-ear">
+                <div style="font-size: 2rem; margin-bottom: 6px;">🎙️</div>
+                <strong style="font-family: 'Padyakke Expanded One', cursive; font-size: 1.15rem; color: var(--page-accent);">ಸಂಗೀತಶಾಸ್ತ್ರ ಜನ್ಮಶತಮಾನೋತ್ಸವ</strong>
+                <p style="font-size: 1.16rem; margin-top: 6px; color: var(--ink-muted);">
+                  ಪದ್ಮಶ್ರೀ ಮಹಾಮಹೋಪಾಧ್ಯಾಯ ಡಾ. ರಾ. ಸತ್ಯನಾರಾಯಣರ ಜನ್ಮಶತಮಾನೋತ್ಸವದ ಭವ್ಯ ಭಾರತೀಯ ಸಂಗೀತಶಾಸ್ತ್ರ ದಿನಾಚರಣೆಯಲ್ಲಿ ಪ್ರಧಾನ ನಿರೂಪಕ.
+                </p>
+              </div>
+
+              <div class="scrap-card dog-ear">
+                <div style="font-size: 2rem; margin-bottom: 6px;">📜</div>
+                <strong style="font-family: 'Padyakke Expanded One', cursive; font-size: 1.15rem; color: var(--page-accent);">ಗಮಕ ವ್ಯಾಖ್ಯಾನ & ಸಂಪನ್ಮೂಲ</strong>
+                <p style="font-size: 1.16rem; margin-top: 6px; color: var(--ink-muted);">
+                  ಮೈಸೂರಿನ ಗಮಕ ಸಮ್ಮೇಳನಗಳಲ್ಲಿ ವ್ಯಾಖ್ಯಾನಕಾರನಾಗಿ, ಹತ್ತು ಹಲವು ಶಾಲಾ-ಕಾಲೇಜುಗಳಲ್ಲಿ ಉಪನ್ಯಾಸಕನಾಗಿ ಸಾಹಿತ್ಯ ಪ್ರಸಾರ.
+                </p>
+              </div>
+            </div>
+
+            <!-- Fun Wandering Stickers on Opportunities Page -->
+            <div class="floating-nudge-wrap" style="margin-top: 22px;">
+              <div class="whimsical-sticker sticker-mint" style="transform: rotate(1.8deg);" onclick="goToPage(3)">
+                <span>🐒 ಬಿಲ್ಡಪ್ ಸಾಕು! ತಲೆಹರಟೆ ಬ್ಲಾಗ್ ಓದಿ (Got bored? Try this blog) ↗</span>
+              </div>
+              <div class="whimsical-sticker sticker-peach" style="transform: rotate(-2.3deg);" onclick="goToPage(5)">
+                <span>✨ ಇಷ್ಟೆಲ್ಲಾ ಸಾಧನೆಗೆ ಕಾರಣ ಯಾರು ಗೊತ್ತಾ? → ‘ಶ್ರೀಗುರು’ (Know his Gurus)</span>
+              </div>
+              <div class="whimsical-sticker sticker-sky" style="transform: rotate(1.2deg);" onclick="goToPage(0)">
+                <span>↩️ ಪರಿಚಯಕ್ಕೆ ವಾಪಸ್ (Back to Parichaya)</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PAGE 6: GURU VANDANA & CONTACT -->
+        <section class="folio-page" id="page-5" aria-label="Guru Lineage and Contact Page" data-glyph="ಶ್ರೀ"
+                 style="--page-accent: var(--hue-violet); --page-accent-soft: var(--hue-violet-soft);">
+          <div>
+            <!-- Guru Tribute Box with Warm Earthy Background -->
+            <div style="background: #fdf6ec; border: 2.5px solid var(--ink-deep); box-shadow: var(--hard-shadow-sm); padding: 22px; margin-bottom: 22px; border-left: 6px solid var(--terracotta-rich); border-radius: 6px;">
+              <h3 style="font-family: 'Padyakke Expanded One', cursive; color: var(--page-accent); font-size: 1.25rem; margin-bottom: 12px;">
+                ನ ತ್ವಾ ಶ್ರೀಗುರು ಚರಣಂ... ಶ್ರೀಗುರುಗಳ ಚರಣಗಳ ಹೊರತಾಗಿ ದಾರಿಯುಂಟೆ!
+              </h3>
+              <div style="background: var(--md-sys-color-surface-card); border: 1.8px solid var(--ink-deep); padding: 16px; margin-top: 8px; border-radius: 4px;">
+                <strong style="font-family: 'Padyakke Expanded One', cursive; font-size: 1.15rem; color: var(--page-accent);">
+                  ವಿದ್ಯಾವಾಗೀಶ್ವರೀಪಂಡಿತ ವಿದ್ವಾನ್ ಡಾ. ರಾ. ಸ. ನಂದಕುಮಾರ್
+                </strong>
+                <p style="font-size: 1.2rem; line-height: 1.65; margin-top: 6px;">
+                  ಜೀವನ ಪಯಣದಲ್ಲಿ ದಾರಿದೀಪವಷ್ಟೇ ಅಲ್ಲದೆ ದಾರಿಯೂ ಆಗಿ, ಕೈಹಿಡಿದು ನಡೆಸುವ ತಂದೆ-ತಾಯಿಯರಿಗಿಂತಲೂ ಮಿಗಿಲಾಗಿ ವಾತ್ಸಲ್ಯ ಧಾರೆ ಹರಿಸಿ ಬೆಳೆಸಿದ ಶ್ರೀಗುರುಗಳು. ಬರಹದಿಂದ ಹಿಡಿದು ತಂತ್ರಜ್ಞಾನದವರೆಗೆ, ಸಂಸ್ಕೃತಿಯಿಂದ ಹಿಡಿದು ಸಂಗೀತದವರೆಗೆ ಎಲ್ಲಕ್ಕೂ ಮಾರ್ಗದರ್ಶಿ.
+                </p>
+              </div>
+              <div style="margin-top: 14px; font-size: 1.2rem; color: var(--page-accent);">
+                ❤️ <strong>ಪಿತೃ-ಮಾತೃ ನಮನ:</strong> ತಂದೆ ಹೇಮಂತ್ ಕುಮಾರ್ ಹಾಗೂ ತಾಯಿ ರೂಪಶ್ರೀ, ಹೃದಯದಲ್ಲಿ ಸದಾ ಕುಳಿತು ಮುನ್ನಡೆಸುವ ಸಾಕ್ಷಾತ್ ದೈವಗಳು.
+              </div>
+            </div>
+
+            <!-- Contact Deck with Warm Sand / Sepia tones -->
+            <div style="background: var(--sand-cloth); border: 2.5px solid var(--ink-deep); box-shadow: var(--hard-shadow-sm); padding: 22px; border-radius: 6px;">
+              <h3 style="font-family: 'Padyakke Expanded One', cursive; font-size: 1.25rem; margin-bottom: 8px; color: var(--page-accent);">
+                ಸಂಪರ್ಕಿಸಿ / Get in Touch
+              </h3>
+              <p style="font-size: 1.2rem; color: var(--ink-muted); margin-bottom: 16px;">
+                ಪುಸ್ತಕ ಉಪನ್ಯಾಸಗಳು, ಗಮಕ ಕಾರ್ಯಕ್ರಮಗಳು, ಸಾಹಿತ್ಯಿಕ ಸಂವಾದಗಳು, ಅನುವಾದ ಯೋಜನೆಗಳು ಅಥವಾ ಸಾಹಿತ್ಯ-ಸಂಗೀತದ ಚರ್ಚೆಗಾಗಿ ಮುಕ್ತವಾಗಿ ಬರೆಯಿರಿ:
+              </p>
+
+              <div>
+                <div class="copy-chip" onclick="copyText('naanukapi@gmail.com', 'Email copied to clipboard!')">
+                  <span>✉️ naanukapi@gmail.com</span>
+                  <span style="font-size: 0.78rem; opacity: 0.7;">(Copy)</span>
+                </div>
+                <div class="copy-chip" onclick="copyText('https://www.amazon.in/dp/B0D5B4Y82F', 'Book link copied!')">
+                  <span>📚 Amazon Link</span>
+                  <span style="font-size: 0.78rem; opacity: 0.7;">(Copy)</span>
+                </div>
+                <div class="copy-chip" onclick="copyText('https://naanukapi.blogspot.com', 'Blog link copied!')">
+                  <span>🌐 naanukapi.blogspot.com</span>
+                  <span style="font-size: 0.78rem; opacity: 0.7;">(Copy)</span>
+                </div>
+              </div>
+
+              <!-- Fun Loop-back Stickers on Contact Page -->
+              <div class="floating-nudge-wrap" style="margin-top: 18px;">
+                <div class="whimsical-sticker" style="transform: rotate(-1.5deg);" onclick="goToPage(0)">
+                  <span>🏡 ಸುತ್ತಾಡಿದ್ದು ಸಾಕು, ಆರಂಭದ 'ಪರಿಚಯ'ಕ್ಕೆ ಮರಳಿ! (Go back to Parichaya)</span>
+                </div>
+                <div class="whimsical-sticker sticker-mint" style="transform: rotate(2.2deg);" onclick="goToPage(3)">
+                  <span>🍌 ಇನ್ನೂ ಬೋರ್ ಆಗ್ತಿದೆಯಾ? ಕಪಿ ಬ್ಲಾಗ್ ಕಾದಿದೆ! (Got bored? Try this blog) ↗</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: right; margin-top: 20px; font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--ink-muted);">
+            TEJAS H. BADALA © 2026 • BENGALURU | MYSURU | CHINTAMANI
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="folio-dock">
+      <div class="dock-pager">
+        <button class="dock-btn" id="prevBtn" onclick="prevPage()" disabled>← ಹಿಂದಕ್ಕೆ (Previous)</button>
+        <span id="pageIndicator" style="letter-spacing: 1px; color: var(--page-accent); font-weight: bold;">ಪುಟ ೧ / ೬</span>
+        <button class="dock-btn" id="nextBtn" onclick="nextPage()">ಮುಂದಕ್ಕೆ (Next) →</button>
+      </div>
+
+      <div style="font-family: 'Space Grotesk', sans-serif; font-size: 0.88rem; color: var(--ink-muted); display: flex; align-items: center; gap: 6px;">
+        <kbd style="background:var(--md-sys-color-surface-card); border:1.8px solid var(--ink-deep); padding:2px 8px; border-radius:4px; box-shadow: 1px 1px 0 var(--ink-deep); font-weight: bold;">←</kbd>
+        <kbd style="background:var(--md-sys-color-surface-card); border:1.8px solid var(--ink-deep); padding:2px 8px; border-radius:4px; box-shadow: 1px 1px 0 var(--ink-deep); font-weight: bold;">→</kbd> 
+        <span>ಬಾಣದ ಗುರುತುಗಳು ಅಥವಾ Swipe ಬಳಸಿ</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Excerpt Modal -->
+  <div id="excerptModal" class="excerpt-dialog" onclick="closeExcerptOnBackdrop(event)">
+    <div class="excerpt-window">
+      <button class="close-corner" onclick="closeExcerpt()">✕</button>
+      <span class="tactile-stamp stamp-terracotta">ಕಾದಂಬರಿಯ ಹಿನ್ನೋಟ</span>
+      <h2 style="font-family: 'Padyakke Expanded One', cursive; font-size: 1.45rem; margin: 14px 0 6px; color: var(--page-accent);">
+        ‘ಅರಣ್ಯನಿ’ ಕೃತಿಯ ಬಗ್ಗೆ ಲೇಖಕರ ಮಾತು
+      </h2>
+      <p style="font-size: 0.95rem; color: var(--terracotta-rich); font-weight: 700; margin-bottom: 18px; font-family: 'Space Grotesk', sans-serif;">
+        WESTERN GHATS • MARTIAL ARTS • SACRED GROVES
+      </p>
+
+      <div style="font-size: 1.3rem; line-height: 1.7; color: var(--ink-deep); font-family: 'Hubballi', sans-serif;">
+        <p style="margin-bottom: 12px;">
+          “ಪಶ್ಚಿಮ ಘಟ್ಟಗಳ ಮಳೆಕಾಡುಗಳಲ್ಲಿ ಬ್ರಿಟಿಷ್ ಸಾಮ್ರಾಜ್ಯಶಾಹಿಯ ವಿರುದ್ಧ ನಡೆದ ಸ್ವಾತಂತ್ರ್ಯ ಸಂಗ್ರಾಮವು ಕೇವಲ ರಾಜಕೀಯ ಸಮರವಷ್ಟೇ ಆಗಿರಲಿಲ್ಲ; ಅದು ಈ ಮಣ್ಣಿನ ಸಾಂಸ್ಕೃತಿಕ ಬೇರುಗಳ, ಕಲರಿಪಯಟ್ಟು ಮುಂತಾದ ಪರಂಪರಾಗತ ಕಲೆಗಳ, ದೈವಾರಾಧನೆಯ ಪಾವಿತ್ರ್ಯದ ರಕ್ಷಣೆಯ ಕದನವೂ ಆಗಿತ್ತು.”
+        </p>
+        <p style="margin-bottom: 12px;">
+          ಕೇಂದ್ರ ಶಿಕ್ಷಣ ಸಚಿವಾಲಯದ ಮಾರ್ಗದರ್ಶನದಲ್ಲಿ ನ್ಯಾಷನಲ್ ಬುಕ್ ಟ್ರಸ್ಟ್ ಪ್ರಕಟಿಸಿರುವ ಈ ಕೃತಿಯು ಪ್ರಕೃತಿ, ಇತಿಹಾಸ ಮತ್ತು ರೋಮಾಂಚಕ ಕಥನಕಲೆಯನ್ನು ಒಟ್ಟಾಗಿಸಿ ಹೊಸ ತಲೆಮಾರಿನ ಓದುಗರಲ್ಲಿ ಸಾಹಿತ್ಯಾಭಿರುಚಿಯನ್ನು ಮೂಡಿಸಲು ಮಾಡಿದ ವಿನಮ್ರ ಪ್ರಯತ್ನ.
+        </p>
+      </div>
+
+      <div style="margin-top: 24px; display: flex; gap: 12px; justify-content: flex-end; flex-wrap: wrap;">
+        <button class="jitter-btn btn-secondary" onclick="closeExcerpt()">ಮುಚ್ಚಿ (Close)</button>
+        <a href="https://www.amazon.in/dp/B0D5B4Y82F" target="_blank" rel="noopener" class="jitter-btn">Amazon ನಲ್ಲಿ ಖರೀದಿಸಿ →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Untitled UI Styled Notification Toast -->
+  <div id="toast" class="toast-msg">Copied to clipboard!</div>
+
+  <script>
+    let currentPage = 0;
+    const totalPages = 6;
+
+    const pageLabels = [
+      "ಪುಟ ೧ / ೬",
+      "ಪುಟ ೨ / ೬",
+      "ಪುಟ ೩ / ೬",
+      "ಪುಟ ೪ / ೬",
+      "ಪುಟ ೫ / ೬",
+      "ಪುಟ ೬ / ೬"
+    ];
+
+    function goToPage(index) {
+      if (index < 0 || index >= totalPages) return;
+      currentPage = index;
+
+      // Move track sideways
+      const track = document.getElementById('folioTrack');
+      track.style.transform = `translateX(-${currentPage * (100 / totalPages)}%)`;
+
+      // Update Tab Styles
+      const tabs = document.querySelectorAll('.m3-tab');
+      tabs.forEach((tab, i) => {
+        tab.classList.toggle('active', i === currentPage);
+      });
+
+      // Update Page active states
+      const pages = document.querySelectorAll('.folio-page');
+      pages.forEach((pg, i) => {
+        pg.classList.toggle('is-active', i === currentPage);
+        if (i === currentPage) {
+          pg.scrollTop = 0;
+        }
+      });
+
+      // Update Dock Buttons and Indicator
+      document.getElementById('prevBtn').disabled = (currentPage === 0);
+      document.getElementById('nextBtn').disabled = (currentPage === totalPages - 1);
+      document.getElementById('pageIndicator').innerText = pageLabels[currentPage];
+
+      // Scroll selected tab into view smoothly on mobile
+      if (tabs[currentPage]) {
+        tabs[currentPage].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    }
+
+    function nextPage() {
+      if (currentPage < totalPages - 1) {
+        goToPage(currentPage + 1);
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 0) {
+        goToPage(currentPage - 1);
+      }
+    }
+
+    // Keyboard Arrow navigation
+    window.addEventListener('keydown', (e) => {
+      if (document.getElementById('excerptModal').classList.contains('open')) {
+        if (e.key === 'Escape') closeExcerpt();
+        return;
+      }
+      if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+        nextPage();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        prevPage();
+      }
+    });
+
+    // Touch Swipe Gesture support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const stage = document.getElementById('folioStage');
+
+    stage.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    stage.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const swipeDistance = touchEndX - touchStartX;
+      if (Math.abs(swipeDistance) > 45) {
+        if (swipeDistance < 0) {
+          nextPage(); // swipe left -> go next
+        } else {
+          prevPage(); // swipe right -> go prev
+        }
+      }
+    }
+
+    // Excerpt Modal functions
+    function openExcerpt() {
+      document.getElementById('excerptModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeExcerpt() {
+      document.getElementById('excerptModal').classList.remove('open');
+      document.body.style.overflow = 'auto';
+    }
+
+    function closeExcerptOnBackdrop(e) {
+      if (e.target.id === 'excerptModal') closeExcerpt();
+    }
+
+    // Clipboard copy with feedback
+    function copyText(text, message) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast(message || 'Copied to clipboard!');
+      } catch (err) {
+        showToast('Press Ctrl+C to copy');
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.style.display = 'block';
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 2400);
+    }
+  </script>
+</body>
+</html>
